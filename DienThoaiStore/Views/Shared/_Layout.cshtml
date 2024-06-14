@@ -1,0 +1,159 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Zettero</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="~/Store/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="~/Store/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="~/Store/css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="~/Store/images/fevicon.png" type="image/gif" />
+    <!-- font css -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="~/Store/css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/~/Store/css/font-awesome.css">
+      <style>
+        /* Footer styles */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333; /* Dark grey background color */
+            color: #fff; /* White text color */
+            padding: 10px 0; /* Add padding above and below the footer */
+            text-align: center;
+            font-size: 14px;
+        }
+
+            footer .container {
+                max-width: 1200px; /* Adjust the maximum width of the container if needed */
+                margin: 0 auto; /* Center the container horizontally */
+            }
+
+            footer p, footer ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            footer ul {
+                list-style: none;
+                padding: 10px 0; /* Padding for footer links */
+            }
+
+                footer ul li {
+                    display: inline;
+                    margin: 0 10px;
+                }
+
+                    footer ul li a {
+                        color: #fff; /* White text color for footer links */
+                        text-decoration: none;
+                    }
+
+                        footer ul li a:hover {
+                            text-decoration: underline; /* Underline on hover */
+                        }
+        }
+    </style>
+</head>
+<body>
+    <div class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> <img src="~/Store/images/logo.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        
+
+                        @if (Context.Session.GetString("Username") != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Phones" asp-action="Index">Quản lí sản phẩm</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Orders" asp-action="Index">Quản lí đơn hàng</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Staffs" asp-action="Index">Quản lí nhân viên</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Logout">Đăng xuất</a>
+                            </li>
+
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Login">Đăng nhập</a>
+                            </li>
+                        }
+                        
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <div class="search_bt">
+                            <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <!-- banner section start -->
+        
+    <!-- header section end -->
+   
+    <!-- download section start -->
+        <div class="download_section layout_padding">
+        <div class="container">
+            <div class="row">
+                @RenderBody()
+            </div>
+        </div>
+
+            <footer class="copyright_section">
+                <div class="container">
+                    <p class="copyright_text">2024 All Rights Reserved. Design by NHOM 18</a></p>
+                </div>
+            </footer>
+
+            <!-- copyright section end -->
+            <!-- Javascript files-->
+            <script src="~/Store/js/jquery.min.js"></script>
+            <script src="~/Store/js/popper.min.js"></script>
+            <script src="~/Store/js/bootstrap.bundle.min.js"></script>
+            <script src="~/Store/js/jquery-3.0.0.min.js"></script>
+            <script src="~/Store/js/plugin.js"></script>
+            <!-- sidebar -->
+            <script src="~/Store/js/jquery.mCustomScrollbar.concat.min.js"></script>
+            <script src="~/Store/js/custom.js"></script>
+        </div>
+    <!-- download section end -->
+ 
+ 
+    <!-- copyright section start -->
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+﻿@model DienThoaiStore.Models.Phone
+
+@{
+    ViewData["Title"] = "Details";
+}
+<head>
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>  
+<div>
+    <h1>CHI TIẾT SẢN PHẨM</h1>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DienThoai)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NamSX)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Mau)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Mau)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.HeDieuHanh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HeDieuHanh)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ThongsoKyThuat)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ThongsoKyThuat)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Ma">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
